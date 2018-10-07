@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="先杀ad啊">
 <meta property="og:description" content="[TOC] RN学习笔记官网地址，建议选择与Demo对应的版本，此时学习的版本是0.51。 入门1 环境直接参考 这里 2 Hello World搭好环境并创建了一个测试工程后，可以直接修改工程目录下的 ./App.js 文件进行编码。此处编码 js 文件可以使用 VSCode ，可能因为机器原因，使用起来不是非常流畅，个人还是使用 Sublime Text 3 + Babel 插件进行编码。Ba">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-30T15:59:46.206Z">
+<meta property="og:updated_time" content="2018-10-07T02:50:43.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native 学习笔记">
 <meta name="twitter:description" content="[TOC] RN学习笔记官网地址，建议选择与Demo对应的版本，此时学习的版本是0.51。 入门1 环境直接参考 这里 2 Hello World搭好环境并创建了一个测试工程后，可以直接修改工程目录下的 ./App.js 文件进行编码。此处编码 js 文件可以使用 VSCode ，可能因为机器原因，使用起来不是非常流畅，个人还是使用 Sublime Text 3 + Babel 插件进行编码。Ba">
@@ -237,7 +237,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="樹葉">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i2.bvimg.com/647489/b5bcef22ce059ee8.jpg">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -271,6 +271,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS学习/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -310,7 +332,8 @@
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">      <span class="keyword">return</span>(</span><br><span class="line">          &lt;Text&gt;Hello &#123;<span class="keyword">this</span>.pros.name&#125;!&lt;/Text&gt;</span><br><span class="line">      );  </span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里自定义组件中的个 <code>name</code> 的属性，然后在外部使用的时候是这样子：</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;CustomComponent name=<span class="string">'world'</span> /&gt;</span><br></pre></td></tr></table></figure>
-<p>最后渲染出来的效果就是输出了 <code>Hello world!</code>。</p>
+<p>最后渲染出来的效果就是输出了 <code>Hello world!</code></p>
+<a id="more"></a>
 <h2 id="4-State（状态）"><a href="#4-State（状态）" class="headerlink" title="4 State（状态）"></a>4 State（状态）</h2><blockquote>
 <p>我们使用两种数据来控制一个组件：<code>props</code> 和 <code>state</code> 。<code>props</code> 是在父组件中指定，而且一经指定，在被指定的组件的生命周期中则不再改变。对于需要改变的数据，我们需要使用 <code>state</code> 。</p>
 </blockquote>
@@ -362,8 +385,6 @@
 <p>此时目录结构应该是这样的</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">RNTest</span><br><span class="line">└── ios</span><br><span class="line">	├── RNTest</span><br><span class="line">	├── RNTest.xcodeproj</span><br><span class="line">	├── RNTestTests</span><br><span class="line">	└── RNTestUITests</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol start="3">
 <li><p>返回到项目根目录，创建 package.json 文件，内容填入以下内容</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"MyReactNativeApp"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.0.1"</span>,</span><br><span class="line">  <span class="attr">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"start"</span>: <span class="string">"node node_modules/react-native/local-cli/cli.js start"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"react"</span>: <span class="string">"16.0.0-alpha.6"</span>,</span><br><span class="line">    <span class="attr">"react-native"</span>: <span class="string">"0.44.3"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -375,8 +396,6 @@
 <li><p>在 iOS 工程下的根目录，创建 Podfile ，或者在原有的 Podfile 里添加 React Native 的依赖；</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">platform:ios, &apos;8.0&apos;</span><br><span class="line">target &apos;RNTest&apos; do</span><br><span class="line">pod &apos;React&apos;, :path =&gt; &apos;../node_modules/react-native&apos;, :subspecs =&gt; [</span><br><span class="line">    &apos;Core&apos;,</span><br><span class="line">    &apos;CxxBridge&apos;, </span><br><span class="line">    &apos;DevSupport&apos;,</span><br><span class="line">    &apos;RCTText&apos;,</span><br><span class="line">    &apos;RCTNetwork&apos;,</span><br><span class="line">    &apos;RCTWebSocket&apos;,</span><br><span class="line">]</span><br><span class="line">pod &quot;yoga&quot;, :path =&gt; &quot;../node_modules/react-native/ReactCommon/yoga&quot;</span><br><span class="line">pod &apos;DoubleConversion&apos;, :podspec =&gt; &apos;../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec&apos;</span><br><span class="line">pod &apos;glog&apos;, :podspec =&gt; &apos;../node_modules/react-native/third-party-podspecs/glog.podspec&apos;</span><br><span class="line">pod &apos;Folly&apos;, :podspec =&gt; &apos;../node_modules/react-native/third-party-podspecs/Folly.podspec&apos;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol start="6">
 <li><p>执行 <code>pod install</code> ，完成依赖的下载以及工程配置；</p>
 </li>
 <li><p>在项目根目录创建 <code>index.js</code> 文件，<code>index.js</code> 是 RN 应用在 iOS 上不可或缺的入口文件，例子中把全部的代码写到了 <code>index.js</code> 文件里，实际开发不推荐这样做；</p>
@@ -384,17 +403,18 @@
 <p><code>Appregistry.registerComponent(&#39;RNTest&#39;, () =&gt; RNHightScores)</code> 中的 ‘RNTest’ 是整体 js 模块。你在 iOS 原生代码中添加 RN 视图时会用到这个名称。</p>
 </li>
 <li><p>打开 iOS 工程，随便在一个页面上编写一个按钮，按钮点击的实现如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">NSLog(@&quot;High Score Button Pressed&quot;);</span><br><span class="line">    NSURL *jsCodeLocation = [NSURL</span><br><span class="line">                             URLWithString:@&quot;http://localhost:8081/index.bundle?platform=ios&quot;];</span><br><span class="line">    RCTRootView *rootView =</span><br><span class="line">      [[RCTRootView alloc] initWithBundleURL : jsCodeLocation</span><br><span class="line">                           moduleName        : @&quot;MyReactNativeApp&quot;</span><br><span class="line">                           initialProperties :</span><br><span class="line">                             @&#123;</span><br><span class="line">                               @&quot;scores&quot; : @[</span><br><span class="line">                                 @&#123;</span><br><span class="line">                                   @&quot;name&quot; : @&quot;Alex&quot;,</span><br><span class="line">                                   @&quot;value&quot;: @&quot;42&quot;</span><br><span class="line">                                  &#125;,</span><br><span class="line">                                 @&#123;</span><br><span class="line">                                   @&quot;name&quot; : @&quot;Joel&quot;,</span><br><span class="line">                                   @&quot;value&quot;: @&quot;10&quot;</span><br><span class="line">                                 &#125;</span><br><span class="line">                               ]</span><br><span class="line">                             &#125;</span><br><span class="line">                           launchOptions    : nil];</span><br><span class="line">    UIViewController *vc = [[UIViewController alloc] init];</span><br><span class="line">    vc.view = rootView;</span><br><span class="line">    [self presentViewController:vc animated:YES completion:nil];</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">NSLog(@&quot;High Score Button Pressed&quot;);</span><br><span class="line">NSURL *jsCodeLocation = [NSURL URLWithString:@&quot;http://localhost:8081/index.bundle?platform=ios&quot;];</span><br><span class="line"></span><br><span class="line">NSDictionary *properties = @&#123;@&quot;scores&quot;:@[@&#123;@&quot;name&quot;: @&quot;Alex&quot;, @&quot;value&quot;: @&quot;42&quot;&#125;, </span><br><span class="line">                                        @&#123;@&quot;name&quot;: @&quot;Joel&quot;, @&quot;value&quot;: @&quot;10&quot;&#125;]&#125;;</span><br><span class="line">RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation moduleName: @&quot;MyReactNativeApp&quot; initialProperties: propertyies launchOptions:nil];</span><br><span class="line">    </span><br><span class="line">UIViewController *vc = [[UIViewController alloc] init];    </span><br><span class="line">vc.view = rootView;</span><br><span class="line">[self presentViewController:vc animated:YES completion:nil];</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 <blockquote>
 <p>这里要注意，该类的头文件记得 <code>import &lt;React/RCTRootView.h&gt;</code> 。而且初始化的 URL 里需要把 <code>localhost</code> 替换成你电脑所在网络下的 IP 地址。RCTRootView 初始化参数里的 <code>moduleNmae</code> 为 <code>index.js</code> 里注册的模块名。</p>
 </blockquote>
-</li>
+<ol start="9">
 <li><p>在 Info.plist 文件中设置 App Transport Security ：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSAppTransportSecurity<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>NSExceptionDomains<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>localhost<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">key</span>&gt;</span>NSTemporaryExceptionAllowsInsecureHTTPLoads<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">true</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol start="10">
-<li>打开终端，cd 到项目的根目录，执行 <code>npm start</code> 开启 packager 的服务，然后可以直接运行 Xcode ，点击运行按钮，进行 app 的调试了。或者在项目的根目录里终端输入 <code>react-native run-ios</code> 来运行应用。</li>
+<li><p>打开终端，cd 到项目的根目录，执行 <code>npm start</code> 开启 packager 的服务，然后可以直接运行 Xcode ，点击运行按钮，进行 app 的调试了。或者在项目的根目录里终端输入 <code>react-native run-ios</code> 来运行应用。</p>
+</li>
 </ol>
 <h3 id="关于-React-Native-工程离线运行-详情看这里"><a href="#关于-React-Native-工程离线运行-详情看这里" class="headerlink" title="关于 React Native 工程离线运行(详情看这里)"></a>关于 React Native 工程离线运行(<a href="https://blog.csdn.net/lotheve/article/details/50606599" target="_blank" rel="noopener">详情看这里</a>)</h3><p>React Native 工程离线运行的重点是将 <code>index.ios.bundle</code> 文件保存在机器本地，<code>index.ios.bundle</code> 文件是工程编译后的 js 文件的打包，<code>index.ios.bundle</code> 将被 <code>packager</code> 服务器创建。</p>
 <h4 id="纯-RN-工程"><a href="#纯-RN-工程" class="headerlink" title="纯 RN 工程"></a>纯 RN 工程</h4><p>纯 RN 工程创建好后在 Xcode 目录中就包含了 <code>main.jsbundle</code> 文件，只不过文件是不存在的（文件标红），这个文件就是编译的时候由 packager 服务器打包好的 <code>index.ios.bundle</code> 文件。</p>
@@ -515,7 +535,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="http://i2.bvimg.com/647489/b5bcef22ce059ee8.jpg"
+                src="/images/avatar.jpg"
                 alt="樹葉" />
             
               <p class="site-author-name" itemprop="name">樹葉</p>
@@ -535,6 +555,15 @@
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
             
 
             
