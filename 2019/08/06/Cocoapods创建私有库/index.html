@@ -79,13 +79,25 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="先杀ad啊">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="概念 库目录表specs：终端输入 cd ~/.cocoapods/repos/master 可以看到所有第三方库的索引文件 私有库目录表的远程仓库：上面所说的目录文件所存放的地址 私有库的远程仓库：就是我们编写的源代码  步骤1. 创建上述的两个仓库这里以github为例，假设我们的私有库项目的名称为 LFTool 。然后我在github上创建对应的仓库，一个为 LFTool 对应源码存放的地放">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cocoapods创建私有库">
+<meta property="og:url" content="http://yoursite.com/2019/08/06/Cocoapods创建私有库/index.html">
 <meta property="og:site_name" content="先杀ad啊">
+<meta property="og:description" content="概念 库目录表specs：终端输入 cd ~/.cocoapods/repos/master 可以看到所有第三方库的索引文件 私有库目录表的远程仓库：上面所说的目录文件所存放的地址 私有库的远程仓库：就是我们编写的源代码  步骤1. 创建上述的两个仓库这里以github为例，假设我们的私有库项目的名称为 LFTool 。然后我在github上创建对应的仓库，一个为 LFTool 对应源码存放的地放">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79gy1g5qah380gdj31jw0nwwoc.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79gy1g5qahurj8nj31je0qgdr3.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79gy1g5qaicrmdzj30h90c4wgu.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79gy1g5qaiztox1j30bg038mxn.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79gy1g5qajgfrv2j31aq0o812h.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79gy1g5qajt0omvj31j80q2qei.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79gy1g5qak4dgvpj30vo0ka7lw.jpg">
+<meta property="og:updated_time" content="2019-08-06T13:46:40.216Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="先杀ad啊">
+<meta name="twitter:title" content="Cocoapods创建私有库">
+<meta name="twitter:description" content="概念 库目录表specs：终端输入 cd ~/.cocoapods/repos/master 可以看到所有第三方库的索引文件 私有库目录表的远程仓库：上面所说的目录文件所存放的地址 私有库的远程仓库：就是我们编写的源代码  步骤1. 创建上述的两个仓库这里以github为例，假设我们的私有库项目的名称为 LFTool 。然后我在github上创建对应的仓库，一个为 LFTool 对应源码存放的地放">
+<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/006tNc79gy1g5qah380gdj31jw0nwwoc.jpg">
 
 
 
@@ -115,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/08/06/Cocoapods创建私有库/"/>
 
 
 
 
 
-  <title>先杀ad啊</title>
+  <title>Cocoapods创建私有库 | 先杀ad啊</title>
   
 
 
@@ -140,8 +152,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,10 +225,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-      
 
   
 
@@ -247,9 +257,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/06/Cocoapods创建私有库/" itemprop="url">Cocoapods创建私有库</a></h1>
+          <h1 class="post-title" itemprop="name headline">Cocoapods创建私有库</h1>
         
 
         <div class="post-meta">
@@ -321,9 +329,7 @@
       
 
       
-        
-          
-            <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
 <li>库目录表specs：终端输入 <code>cd ~/.cocoapods/repos/master</code> 可以看到所有第三方库的索引文件</li>
 <li>私有库目录表的远程仓库：上面所说的目录文件所存放的地址</li>
 <li>私有库的远程仓库：就是我们编写的源代码</li>
@@ -358,8 +364,6 @@
 <p>然后我们在podfile里，导入我们的库就可以使用啦，记得添加两个source喔</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source <span class="string">'https://github.com/CocoaPods/Specs.git'</span></span><br><span class="line">source <span class="string">'我们库的spec地址'</span></span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -376,324 +380,28 @@
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
       
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/30/2019个人总结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="樹葉">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="先杀ad啊">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/30/2019个人总结/" itemprop="url">2019个人总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-30T10:15:52+08:00">
-                2019-06-30
-              </time>
+              <a href="/2019/06/30/2019个人总结/" rel="next" title="2019个人总结">
+                <i class="fa fa-chevron-left"></i> 2019个人总结
+              </a>
             
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS学习/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="2019半年度总结"><a href="#2019半年度总结" class="headerlink" title="2019半年度总结"></a>2019半年度总结</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>时隔一年，终于才想起要写点东西。距离上一篇博客，也已经整整一年了。也因为去年的时候因为个人的一些原因，再加上前一家公司刚好裁员，就借此机会给自己放了个假。3个月后才回到工作岗位上工作。现在已经在新公司半年了，在每天做着复杂的需求的时候，一直想着没有做些技术输出。总是想着技术储备技术储备，但始终没有让自己真正积累起来。也让自己总是不断的在迷茫、打鸡血之间来回切换。本来是想着到年终再来写个个人总结，但是觉得可能会又会给自己原因不去做。所以与其重蹈覆辙，不如趁着半年先来个半年总结，也是让自己尽快地动起来。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在过去的半年里，工作上我个人而言，成长的速度不是特别快。有可能是负责的工作很大程度上是接公司的sdk，而sdk大多都是坑。加上公司的沟通流程实在是太麻烦了，完成一个东西需要产品级走一些申请流程，完了安装还需要申请一堆权限的账号。等真正开始接的时候，文档又不充足，或者说是内容过时没有更新。沟通还要各种拉群，还要绕来绕去。所以很大的一个感受是，明明实现一个功能，真正花太多时间在前期各种不是很有意义的流程或者沟通上。可能也是这个公司的历史原因，以及很多出于不得已的原因才导致这样子的构架，所以这个位置很难去推动一些改革，当然我也没有那么大的勇气，也没有那么大的影响力。</p>
-<p>年前的时候，本来还想着把另外一个项目速战速决的。可是由于一方面，现在这公司的下班时间以及回家的路程的影响，每天下班后到家，时间已经不算早，而且精力在路程上也消耗了不少，所以每天到家后就不想再打开电脑了。另一方面，项目原因，本身的需求了解，以及各种设计方面的不完美，这些需要前期参与沟通的问题没有解决。另外，太多的妥协，所以做起来其实真的不是很顺手。所以到后面的时候，基本上是不想再继续了。所以最近也决定不再继续跟这个项目了，宁愿再花点时间做点技术储备，再到慢慢地做输出。</p>
-<p>关于读书方面，去年把几年前买的乔布斯传看完了，以及朋友介绍的三体，看完了前两部。重新看了一遍操作系统，看到磁盘管理之前的内容。虽然重拾了一些基础内容，但是还是没有很好的消化，所以等之后应该还是会多啃几遍。现在在看《程序员的自我修养》，把一些关于编译、操作系统的内容串联起来学习一下。关于iOS方面，前段时候还是有点时间去研究block。后面由于调研音频的频分析，以及后面的新项目的建立，就花时间到项目需求上了。当然，也有陆续地把算法捡起来，慢慢刷leetcode简单级别的算法题，先慢慢积累。</p>
-<h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><h3 id="书单"><a href="#书单" class="headerlink" title="书单"></a><em>书单</em></h3><p>《程序员的自我修养》、《设计模式》把这两本先看完，之后再想想看什么。</p>
-<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a><em>源码</em></h3><p>开源库：Masonry、或许会继续尝试CoreAudio的学习</p>
-<p>oc原理：block、runtime解析</p>
-<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a><em>算法</em></h3><p>刷完精选题的中等以及困难的题。</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a><em>其他</em></h3><p>swift的话，如果有时间就继续捡起来吧。</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>那么，如果还有下期，再见。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/30/React-Native-学习笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="樹葉">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="先杀ad啊">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/30/React-Native-学习笔记/" itemprop="url">React Native 学习笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-30T23:55:03+08:00">
-                2018-06-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS学习/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>[TOC]</p>
-<h1 id="RN学习笔记"><a href="#RN学习笔记" class="headerlink" title="RN学习笔记"></a>RN学习笔记</h1><p><a href="https://reactnative.cn/docs/0.51/getting-started.html#content" target="_blank" rel="noopener">官网地址</a>，建议选择与Demo对应的版本，此时学习的版本是0.51。</p>
-<h1 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h1><h2 id="1-环境"><a href="#1-环境" class="headerlink" title="1 环境"></a>1 环境</h2><p>直接参考 <a href="https://reactnative.cn/docs/0.51/getting-started.html#content" target="_blank" rel="noopener">这里</a></p>
-<h2 id="2-Hello-World"><a href="#2-Hello-World" class="headerlink" title="2 Hello World"></a>2 Hello World</h2><p>搭好环境并创建了一个测试工程后，可以直接修改工程目录下的 ./App.js 文件进行编码。此处编码 js 文件可以使用 VSCode ，可能因为机器原因，使用起来不是非常流畅，个人还是使用 Sublime Text 3 + Babel 插件进行编码。Babel 是 JSX 的语法高亮插件。然后对 App.js 文件按照文档中的示例进行修改，然后运行即可。</p>
-<h2 id="3-Props（属性）"><a href="#3-Props（属性）" class="headerlink" title="3 Props（属性）"></a>3 Props（属性）</h2><blockquote>
-<p>大多数组件在创建时就可以使用各种参数来进行定制。用于定制的这些参数就称为 <code>props</code> (属性)。</p>
-</blockquote>
-<p>自定义组件也可以使用 <code>props</code> ，只需要在 <code>render</code> 函数中引用 <code>this.props</code> ，然后按需要处理。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">      <span class="keyword">return</span>(</span><br><span class="line">          &lt;Text&gt;Hello &#123;<span class="keyword">this</span>.pros.name&#125;!&lt;/Text&gt;</span><br><span class="line">      );  </span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里自定义组件中的个 <code>name</code> 的属性，然后在外部使用的时候是这样子：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;CustomComponent name=<span class="string">'world'</span> /&gt;</span><br></pre></td></tr></table></figure>
-<p>最后渲染出来的效果就是输出了 <code>Hello world!</code></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/30/React-Native-学习笔记/#more" rel="contents">
-              Read more &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -703,11 +411,11 @@
   </article>
 
 
-      
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -715,6 +423,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -735,8 +447,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -791,6 +512,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-创建上述的两个仓库"><span class="nav-number">2.1.</span> <span class="nav-text">1. 创建上述的两个仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-把保存源码的仓库clone下来"><span class="nav-number">2.2.</span> <span class="nav-text">2. 把保存源码的仓库clone下来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-创建Spec文件"><span class="nav-number">2.3.</span> <span class="nav-text">3. 创建Spec文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-编辑Spec文件"><span class="nav-number">2.4.</span> <span class="nav-text">4. 编辑Spec文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-验证Spec文件"><span class="nav-number">2.5.</span> <span class="nav-text">5 验证Spec文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-给库打上tag并上传到git服务器"><span class="nav-number">2.6.</span> <span class="nav-text">6 给库打上tag并上传到git服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-同步spec文件至spec仓库"><span class="nav-number">2.7.</span> <span class="nav-text">7 同步spec文件至spec仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -924,6 +661,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
